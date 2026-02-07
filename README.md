@@ -1,0 +1,2 @@
+# regix
+DICT/SYSTEm
