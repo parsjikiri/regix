@@ -26,7 +26,7 @@ function showError($error)
 
 <body class="gray-bg">
 
-    <div class="loginColumns animated fadeInDown pt-6">
+    <div class="loginColumns animated fadeInDown pt-5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12 col-md-10 mx-auto">
@@ -59,6 +59,9 @@ function showError($error)
                                         <a href="#"><small>Forgot password?</small></a>
                                         <p class="text-muted mt-3 mb-1"><small>Do not have an account?</small></p>
                                         <a class="btn btn-sm btn-outline-secondary w-100" href="register.php">Create an account</a>
+
+                                        <p class="text-muted mt-3 mb-1"><small>Service Request</small></p>
+                                        <a class="btn btn-sm btn-outline-secondary w-100" href="servicenow.php">Proceed</a>
                                     </div>
                                 </form>
                             </div>

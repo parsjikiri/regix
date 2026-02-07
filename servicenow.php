@@ -20,20 +20,12 @@ function showError($error)
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <style>
-        /* Ensures the layout doesn't get too wide on large screens */
-        .register-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-    </style>
 </head>
 
 <body class="gray-bg">
-    <div class="loginColumns animated fadeInDown py-4">
-        <div class="container-fluid px-0 register-container">
-
-            <div class="row g-0 d-flex align-items-stretch shadow rounded overflow-hidden bg-white">
+    <div class="loginColumns animated fadeInDown">
+        <div class="container-fluid px-0">
+            <div class="row g-0 d-flex align-items-stretch shadow rounded overflow-hidden bg-white mb-5">
 
                 <div class="col-md-4 p-0 d-none d-md-block">
                     <img src="img/headphones.jpg" alt="Register" class="w-100 h-100" style="object-fit: cover; min-height: 450px;">
@@ -71,48 +63,20 @@ function showError($error)
                                 </select>
                             </div>
 
-                            <button type="submit" name="register" class="btn btn-primary w-100 mb-3">Register</button>
+                            <button type="submit" name="register" class="btn btn-primary w-100 mb-3">Service Request</button>
 
                             <div class="text-center">
-                                <p class="text-muted mb-1"><small>Already have an account?</small></p>
+                                <p class="text-muted mb-1"><small>Are you an admin?</small></p>
                                 <a class="btn btn-sm btn-outline-secondary w-100" href="login.php">Log-in Here</a>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
-
-            <div class="row mt-3">
-                <div class="col-12 text-center">
-                    <hr class="mt-0 mb-2">
-                    <div class="text-muted">
-                        <?php include 'view/partial/authforms_copyright.php'; ?>
-                    </div>
-                </div>
-            </div>
+            <hr />
+            <?php include 'view/partial/authforms_copyright.php'; ?>
         </div>
     </div>
-
-    <script>
-        const password = document.getElementById('password');
-        const confirm_password = document.getElementById('confirm_password');
-        const message = document.getElementById('password-message');
-
-        function validatePassword() {
-            if (password.value !== confirm_password.value) {
-                message.textContent = "✘ Passwords do not match";
-                message.className = "small mt-1 text-danger";
-                confirm_password.setCustomValidity("Passwords do not match");
-            } else {
-                message.textContent = "✔ Passwords match";
-                message.className = "small mt-1 text-success";
-                confirm_password.setCustomValidity("");
-            }
-        }
-
-        password.addEventListener('change', validatePassword);
-        confirm_password.addEventListener('keyup', validatePassword);
-    </script>
 </body>
 
 </html>

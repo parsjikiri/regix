@@ -26,7 +26,7 @@ $inactivity_limit = 3600;
 if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > $inactivity_limit)) {
     session_unset();
     session_destroy();
-    header("Location: ../login.php?reason=timeout");
+    header("Location: ../index.php?reason=timeout");
     exit();
 }
 
@@ -35,7 +35,7 @@ $_SESSION['last_activity'] = time();
 
 // 5. Standard Login Check
 if (!isset($_SESSION['email'])) {
-    header("Location: ../login.php");
+    header("Location: ../index.php");
     exit();
 }
 
