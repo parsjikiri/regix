@@ -26,7 +26,7 @@ function showError($error)
 
 <body class="gray-bg">
 
-    <div class="loginColumns animated fadeInDown">
+    <div class="loginColumns animated fadeInDown pt-6">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12 col-md-10 mx-auto">

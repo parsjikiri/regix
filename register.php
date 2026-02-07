@@ -23,7 +23,7 @@ function showError($error)
 </head>
 
 <body class="gray-bg">
-    <div class="loginColumns animated fadeInDown">
+    <div class="loginColumns animated fadeInDown pt-5">
         <div class="container-fluid px-0">
             <div class="row g-0 d-flex align-items-stretch shadow rounded overflow-hidden bg-white mb-5">
 
