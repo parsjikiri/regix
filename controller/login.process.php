@@ -3,7 +3,6 @@ session_start();
 require_once '../config/connect.php';
 
 if (isset($_POST['login'])) {
-    // trim() removes accidental spaces from the beginning/end of email
     $email = trim($_POST['email']);
     $password = $_POST['password'];
 
@@ -22,6 +21,7 @@ if (isset($_POST['login'])) {
         $_SESSION['role'] = $user['role'];
 
         // Redirect based on role
+        // Note: JS Fetch will detect this 'redirected' status and move the browser
         if ($user['role'] === 'admin') {
             header("Location: ../admin/dashboard.php");
         } else {
@@ -29,13 +29,14 @@ if (isset($_POST['login'])) {
         }
         exit();
     } else {
-        // FAILURE: Set the specific session key 'login_error'
-        $_SESSION['login_error'] = 'Incorrect Email or Password';
-        header("Location: ../login.php");
+        // FAILURE: 
+        // Instead of redirecting, we simply echo the error message.
+        // The AJAX 'fetch' on your login page will receive this text.
+        echo 'Incorrect Email or Password';
         exit();
     }
 }
 
 // Security: If accessed directly without POST
-header("Location: ../login.php");
+header("Location: ../index.php");
 exit();

@@ -20,12 +20,19 @@ function showError($error)
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        /* Restrict width for better aesthetics on wide screens */
+        .register-container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 
 <body class="gray-bg">
-    <div class="loginColumns animated fadeInDown">
-        <div class="container-fluid px-0">
-            <div class="row g-0 d-flex align-items-stretch shadow rounded overflow-hidden bg-white mb-5">
+    <div class="loginColumns animated fadeInDown pt-4">
+        <div class="container-fluid px-0 register-container">
+            <div class="row g-0 d-flex align-items-stretch shadow rounded overflow-hidden bg-white mb-3">
 
                 <div class="col-md-4 p-0 d-none d-md-block">
                     <img src="img/headphones.jpg" alt="Register" class="w-100 h-100" style="object-fit: cover; min-height: 450px;">
@@ -34,7 +41,7 @@ function showError($error)
                 <div class="col-md-8">
                     <div class="ibox-content h-100 d-flex flex-column justify-content-center p-4 p-lg-5 border-0">
                         <form id="registrationForm" role="form" action="controller/register.process.php" method="post">
-                            <h3 class="font-bold mb-4">Create Account</h3>
+                            <h3 class="font-bold mb-4">Service Request Form</h3>
 
                             <?php echo showError($error_msg); ?>
 
@@ -73,8 +80,13 @@ function showError($error)
                     </div>
                 </div>
             </div>
-            <hr />
-            <?php include 'view/partial/authforms_copyright.php'; ?>
+
+            <div class="text-center">
+                <hr class="mt-0 mb-2" />
+                <div class="text-muted small">
+                    <?php include 'view/partial/authforms_copyright.php'; ?>
+                </div>
+            </div>
         </div>
     </div>
 </body>
